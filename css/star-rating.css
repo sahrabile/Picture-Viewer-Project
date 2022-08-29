@@ -1,0 +1,65 @@
+.rating input{
+    display: none;
+}
+
+.rating{
+    margin: 10rem;
+    width: fit-content;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: row-reverse; /*show the star system in reverse direction*/
+    border: 1px solid rgb(231, 231, 231);
+    border-radius: 5%;
+    padding: 0.1rem;
+}
+
+.rating label{
+    display: block;
+    cursor: pointer;
+    width: 50px; /*maybe change later*/
+    
+
+}
+
+.rating label:before{
+    content: '\f005'; /*this is the star*/
+    font-family: fontAwesome;
+    position: relative;
+    display: block;
+    font-size: 40px;
+    color:rgb(229, 236, 236);
+}
+
+.rating label:after{
+    content: '\f005'; /*this is the star*/
+    font-family: fontAwesome;
+    position: absolute;
+    display: block;
+    font-size: 40px;
+    color:rgb(238, 212, 64);
+    top: 0;
+    opacity: 0;
+    transition: .5s;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+}
+
+/*when I hover and when I click on the star after-object should change opacity*/
+.rating label:hover:after, 
+.rating label:hover ~ label:after,
+.rating input:checked ~ label:after{
+    opacity: 1;
+}
+
+button{
+    width: 40px;
+    background-color: white;
+    border: none;
+    margin-left: 10px;
+    Opacity: 0.8;
+}
+
+button:hover{
+    opacity: 1;
+    border: 1px solid grey;
+    border-radius: 5%;
+}
