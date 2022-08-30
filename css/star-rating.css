@@ -1,22 +1,26 @@
+
+
 .rating input{
     display: none;
 }
 
 .rating{
-    margin: 10rem;
+    position: relative;
     width: fit-content;
-    transform: translate(-50%,-50%);
     display: flex;
     flex-direction: row-reverse; /*show the star system in reverse direction*/
     border: 1px solid rgb(231, 231, 231);
     border-radius: 5%;
-    padding: 0.1rem;
+    padding: 0.2rem;
+    margin: auto;
+   
 }
 
 .rating label{
     display: block;
     cursor: pointer;
-    width: 50px; /*maybe change later*/
+    width: 2rem; /*maybe change later*/
+    margin-right: 0.3rem;
     
 
 }
@@ -26,8 +30,9 @@
     font-family: fontAwesome;
     position: relative;
     display: block;
-    font-size: 40px;
+    font-size: 2rem;
     color:rgb(229, 236, 236);
+    margin: auto;
 }
 
 .rating label:after{
@@ -35,12 +40,13 @@
     font-family: fontAwesome;
     position: absolute;
     display: block;
-    font-size: 40px;
+    font-size: 2rem;
     color:rgb(238, 212, 64);
     top: 0;
     opacity: 0;
     transition: .5s;
     text-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+    margin:auto;
 }
 
 /*when I hover and when I click on the star after-object should change opacity*/
@@ -51,10 +57,10 @@
 }
 
 button{
-    width: 40px;
+    width: 2.5rem;
     background-color: white;
     border: none;
-    margin-left: 10px;
+    margin-left: 1rem;
     Opacity: 0.8;
 }
 
@@ -63,3 +69,58 @@ button:hover{
     border: 1px solid grey;
     border-radius: 5%;
 }
+
+img{
+    width: 200px;
+    height: 200px;
+}
+
+figure{
+    grid-area: figure;
+}
+
+.pictureContainer{
+    border: 2px solid green;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-template-areas: 
+    'figure'
+    'rating';
+    height: 20rem;
+    width: 20rem;
+    /*overflow: hidden;*/
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@media screen and (orientation: portrait){
+    .rating{
+        height: fit-content;
+    }
+   .rating label{
+        width: 1rem;
+   }
+
+    .rating label:before{
+        font-size: 1rem;
+    }
+
+    .rating label:after{
+        font-size: 1rem;
+    }
+
+    button{
+        width: 1.5rem;
+    }
+
+    img{
+        width: 100px;
+        height: 100px;
+    }
+}
+
+
+
