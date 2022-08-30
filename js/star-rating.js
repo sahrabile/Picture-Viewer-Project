@@ -11,6 +11,7 @@ function eraseRating(div){
 }
 
 //we can change the fetch to help each and every album get the right pictures and generate the rating containers
+//maybe with help of album name/ id/ index as a property in function -> change the first for loop
 async function generateRatingContainer(){
     await fetch('\\app-data\\library\\picture-library.json')
     .then((response) => response.json())
@@ -55,7 +56,7 @@ async function generateRatingContainer(){
                         
                         ratingContainer.appendChild(star);
                         ratingContainer.appendChild(label);
-                        
+
                         //later: set the right radio button to checked to display the right rating
                     }
                     starGroups++;
