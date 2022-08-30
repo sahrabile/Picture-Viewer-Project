@@ -1,0 +1,151 @@
+a {
+    color: #FFFFFF;
+}
+
+.topnav {
+    background-color: #203239;
+    overflow: auto;
+    width: 100%;
+}
+
+.topnav a {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 20px 114px;
+    text-decoration: none;
+    font-size: 17px;
+    width: 25%;
+
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #D3E4CD;
+    color: white;
+}
+
+h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+
+body {
+    background-color: #FEF5ED;
+}
+
+/*Gallery css*/
+.column {
+    float: left;
+    width: 23%;
+    padding: 15px;
+}
+
+.column img {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.column img:hover {
+    opacity: 1;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.container {
+    position: relative;
+    display: none;
+}
+
+#imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-size: 20px;
+}
+
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+div.gallery:hover {
+    opacity: 0.6;
+    text-align: center;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    backface-visibility: hidden;
+}
+
+div.title {
+    opacity: 0;
+}
+
+div.gallery:hover title {
+    opacity: 1;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+div.title:hover {
+    opacity: 1;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .responsive {
+        width: 100%;
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
