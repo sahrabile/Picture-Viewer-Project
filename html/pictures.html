@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/styleAlbumPhotos.css">
+        <script src="JS/sAP.JS"></script>
+        <title>Test Project</title>
+    </head>
+
+<body>
+    <h1>Picture Viewer Project</h1>
+    <div class="topnav">
+        <a href="index.html">Start</a>
+        <a href="#pictures">Pictures</a>
+        <a class="active" href="albums.html">Albums</a>
+        <a href="#about_us">About us</a>
+      </div>
+
+      <br>
+
+  <div class="row">
+
+    <div class="responsive">
+      <div class="gallery">
+        <img class="blur" src="css/img/nature5.jpg" alt="Nature" width="600" height="400" onclick="myFunction(this);">
+        <div class="descrip fade">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni quo porro aliquam praesentium aperiam, impedit enim rem eum temporibus dolore laboriosam officia placeat sit facere quos distinctio id quae quasi.</div>
+        <div class="title fade">Name</div>
+      </div>
+    </div>
+
+    <div class="responsive">
+      <div class="gallery">
+      <img class="blur" src="css/img/nature1.jpg" alt="test" width="600" height="400" onclick="myFunction(this);">
+      <div class="descrip fade">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis provident eos tempora illum ab voluptates, commodi non alias debitis eligendi quos quasi harum vero repudiandae voluptatem iste quae dolorum aspernatur.</div>
+      <div class="title fade">Name</div>
+      </div>
+    </div>
+
+    <div class="responsive">
+      <div class="gallery">
+      <img class="blur" src="css/img/nature2.jpg" alt="test" width="600" height="400" onclick="myFunction(this);">
+      <div class="descrip fade">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis provident eos tempora illum ab voluptates, commodi non alias debitis eligendi quos quasi harum vero repudiandae voluptatem iste quae dolorum aspernatur.</div>
+      <div class="title fade">Name</div>
+    </div>
+    </div>
+
+    <div class="responsive">
+      <div class="gallery">
+      <img class="blur" src="css/img/nature3.jpg" alt="test" width="600" height="400" onclick="myFunction(this);">
+      <div class="descrip fade">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis provident eos tempora illum ab voluptates, commodi non alias debitis eligendi quos quasi harum vero repudiandae voluptatem iste quae dolorum aspernatur.</div>
+      <div class="title fade">Name</div>
+    </div>
+    </div>
+
+  </div>
+
+  <br>
+
+  <div class="container">
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  
+    <img id="expandedImg" style="width:100%">
+  
+    <div id="imgtext"></div>
+  </div>
+
+</body>
+</html>
