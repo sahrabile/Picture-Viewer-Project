@@ -5,6 +5,7 @@
 }
 
 .rating{
+    margin: 1rem;
     position: relative;
     width: fit-content;
     display: flex;
@@ -70,33 +71,8 @@ button:hover{
     border-radius: 5%;
 }
 
-img{
-    width: 200px;
-    height: 200px;
-}
 
-figure{
-    grid-area: figure;
-}
-
-.pictureContainer{
-    border: 2px solid green;
-    display: grid;
-    grid-template-columns: repeat(1,1fr);
-    grid-template-rows: repeat(3,1fr);
-    grid-template-areas: 
-    'figure'
-    'rating';
-    height: 20rem;
-    width: 20rem;
-    /*overflow: hidden;*/
-
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-@media screen and (orientation: portrait){
+@media only screen and (max-width: 950px) {
     .rating{
         height: fit-content;
     }
@@ -115,12 +91,27 @@ figure{
     button{
         width: 1.5rem;
     }
+  }
+  
+  @media only screen and (max-width: 500px) {
 
-    img{
-        width: 100px;
-        height: 100px;
+    .rating{
+        height: fit-content;
     }
+   .rating label{
+        width: 1.5rem;
+   }
+
+    .rating label:before{
+        font-size: 1.5rem;
+    }
+
+    .rating label:after{
+        font-size: 1.5rem;
+    }
+
+    button{
+        width: 2rem;
+    }
+  
 }
-
-
-
