@@ -60,6 +60,22 @@ a{
     font-size: 20px;
   }
 
+  #imgdesc {
+    display: block;
+    position: absolute;
+    bottom: 100px;
+    right: 15px;
+    color: white;
+    font-size: 12px;
+    width: 500px;
+    border: 20px;
+    padding: 20px;
+    justify-content: right;
+    align-items: right;
+    text-align: left;
+    
+  }
+  
   .closebtn {
     position: absolute;
     top: 10px;
