@@ -13,6 +13,7 @@ a{
 
   div.gallery {
     border: 1px solid #ccc;
+    width: 100%;
   }
   
   div.gallery:hover {
@@ -36,17 +37,62 @@ a{
   .albumContainer {
     padding: 0 6px;
     float: left;
-    width: 24.99999%;
+    width: 20rem;
+    height: fit-content;
+  }
+  .gridWrap{
+    display: grid;
+    grid-gap: .1rem;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(1,1fr);
+    overflow: hidden;
+    height: fit-content;
+  }
+
+  /*this is maybe not necessary */
+  @media screen and (max-width: 1500px){
+    .gridWrap{
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      grid-template-rows: repeat(2,1fr);
+  }
+  }
+
+  @media screen and (max-width: 1200px){
+    .gridWrap{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      grid-template-rows: repeat(2,1fr);
+  }
+  }
+
+  @media only screen and (max-width: 900px) {
+    .gridWrap{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      grid-template-rows: repeat(2,1fr);
+  }
   }
   
   @media only screen and (max-width: 700px) {
     .albumContainer {
-      width: 49.99999%;
+      width: 20rem;
       margin: 6px 0;
     }
+    .gridWrap{
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      grid-template-rows: repeat(3,1fr);
   }
+ 
+}
   
   @media only screen and (max-width: 500px) {
+    .gridWrap{
+      display: grid;
+      grid-template-columns: repeat(1,1fr);
+      grid-template-rows: repeat(5,1fr);
+    }
     .albumContainer {
       width: 100%;
     }
