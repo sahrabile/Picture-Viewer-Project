@@ -8,24 +8,30 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
         <link rel="stylesheet" type="text/css" href="\css\styleAlbumPhotos.css">
         <link rel="stylesheet" href="\css\star-rating.css">
+        <link rel="stylesheet" href="/css/nav.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="/js/RTN.js"></script>
         <script src="JS/sAP.JS"></script>
         <title>Test Project</title>
     </head>
 
 <body>
     <h1>Picture Viewer Project</h1>
-    <div class="topnav">
-        <a href="index.html">Start</a>
-        <a href="pictures.html">Pictures</a>
-        <a class="" href="albums.html">Albums</a>
-        <a href="#about_us">About us</a>
-      </div>
+    <div class="topnav" id="myTopnav">
+      <a href="index.html" class="active">Start</a>
+      <a href="pictures.html">Pictures</a>
+      <a href="albums.html">Albums</a>
+      <a href="#About us">About us</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+  </a>
+    </div>
 
       <br>
 
   <div class="row">
 
-    <div class="responsive">
+    <div class="imageContainer">
       <div class="gallery">
 
         <img class="blur" src="\app-data\library\pictures\galaxies\0700064~orig.jpg" alt="Nature" width="600" height="400" onclick="myFunction(this);" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat voluptatem, dicta assumenda doloribus, accusamus magni, quo laboriosam deserunt facere rem dolorem accusantium qui est porro. Tempore quisquam explicabo vel quibusdam?">
@@ -47,7 +53,7 @@
     </div>
     </div>
 
-    <div class="responsive">
+    <div class="imageContainer">
       <div class="gallery">
       <img class="blur" src="\app-data\library\pictures\galaxies\0700064~small.jpg" alt="test" width="600" height="400" onclick="myFunction(this);" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat voluptatem, dicta assumenda doloribus, accusamus magni, quo laboriosam deserunt facere rem dolorem accusantium qui est porro. Tempore quisquam explicabo vel quibusdam?">
       <div class="descrip fade">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis provident eos tempora illum ab voluptates, commodi non alias debitis eligendi quos quasi harum vero repudiandae voluptatem iste quae dolorum aspernatur.</div>
@@ -68,7 +74,7 @@
     </div>
     </div>
 
-    <div class="responsive">
+    <div class="imageContainer">
       <div class="gallery">
 
       <img class="blur" src="\app-data\library\pictures\galaxies\GSFC_20171208_Archive_e000117~orig.jpg" alt="test" width="600" height="400" onclick="myFunction(this);" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat voluptatem, dicta assumenda doloribus, accusamus magni, quo laboriosam deserunt facere rem dolorem accusantium qui est porro. Tempore quisquam explicabo vel quibusdam?">
@@ -91,7 +97,7 @@
     
     </div>
 
-    <div class="responsive">
+    <div class="imageContainer">
       <div class="gallery">
 
       <img class="blur" src="\app-data\library\pictures\galaxies\GSFC_20171208_Archive_e000117~small.jpg" alt="test" width="600" height="400" onclick="myFunction(this);" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat voluptatem, dicta assumenda doloribus, accusamus magni, quo laboriosam deserunt facere rem dolorem accusantium qui est porro. Tempore quisquam explicabo vel quibusdam?">

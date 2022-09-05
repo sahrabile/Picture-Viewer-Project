@@ -5,56 +5,74 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="/css/styleAlbums.css">
+        <link rel="stylesheet" href="/css/nav.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="/js/RTN.js"></script>
         <title>Test Project</title>
     </head>
 
 <body>
     <h1>Picture Viewer Project</h1>
-    <div class="topnav">
-        <a href="index.html">Start</a>
-        <a href="pictures.html">Pictures</a>
-        <a class="" href="albums.html">Albums</a>
-        <a href="#about_us">About us</a>
-      </div>
+    <div class="topnav" id="myTopnav">
+      <a href="index.html" class="active">Start</a>
+      <a href="pictures.html">Pictures</a>
+      <a href="albums.html">Albums</a>
+      <a href="#About us">About us</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+    </div>
     
       <br>
-      
-      <div class="responsive">
-        <div class="gallery">
-          <a href="pictures.html">
-            <img src="css/img/nature5.jpg" alt="flowers-276014__340" width="600" height="400">
-          </a>
-          <div class="desc">Nature</div>
+
+      <div class="gridWrap">
+        <div class="albumContainer">
+          <div class="gallery">
+            <a href="pictures.html">
+              <img src="\app-data\library\pictures\album-header\A Galactic Spectacle_4862916839_o~small.jpg" alt="flowers-276014__340" width="600" height="400">
+            </a>
+            <div class="desc">Galaxy</div>
+          </div>
+        </div>
+        
+        
+        <div class="albumContainer">
+          <div class="gallery">
+            <a target="" href="pictures.html">
+              <img src="\app-data\library\pictures\album-header\GSFC_20171208_Archive_e000383~small.jpg" alt="istockphoto-1146517111-612x612" width="600" height="400">
+            </a>
+            <div class="desc">Culture</div>
+          </div>
+        </div>
+        
+        <div class="albumContainer">
+          <div class="gallery">
+            <a target="" href="pictures.html">
+              <img src="\app-data\library\pictures\album-header\GSFC_20171208_Archive_e002151~small.jpg" alt="nature-image-for-website" width="600" height="400">
+            </a>
+            <div class="desc">idk  tbh</div>
+          </div>
+        </div>
+        
+        <div class="albumContainer">
+          <div class="gallery">
+            <a target="" href="pictures.html">
+              <img src="\app-data\library\pictures\album-header\hubble-captures-vivid-auroras-in-jupiters-atmosphere_28000029525_o~small.jpg" alt="Mountains" width="600" height="400">
+            </a>
+            <div class="desc">Feelings</div>
+          </div>
+        </div>
+  
+        <div class="albumContainer">
+          <div class="gallery">
+            <a target="" href="pictures.html">
+              <img src="\app-data\library\pictures\album-header\PIA04921~small.jpg" alt="Mountains" width="600" height="400">
+            </a>
+            <div class="desc">last</div>
+          </div>
         </div>
       </div>
       
-      
-      <div class="responsive">
-        <div class="gallery">
-          <a target="_blank" href="css/img/istockphoto-1146517111-612x612.jpg">
-            <img src="css/img/istockphoto-1146517111-612x612.jpg" alt="istockphoto-1146517111-612x612" width="600" height="400">
-          </a>
-          <div class="desc">Culture</div>
-        </div>
-      </div>
-      
-      <div class="responsive">
-        <div class="gallery">
-          <a target="_blank" href="css/img/nature-image-for-website.jpg">
-            <img src="css/img/nature-image-for-website.jpg" alt="nature-image-for-website" width="600" height="400">
-          </a>
-          <div class="desc">idk  tbh</div>
-        </div>
-      </div>
-      
-      <div class="responsive">
-        <div class="gallery">
-          <a target="_blank" href="css/img/tree-736885__480.jpg">
-            <img src="css/img/tree-736885__480.jpg" alt="Mountains" width="600" height="400">
-          </a>
-          <div class="desc">Feelings</div>
-        </div>
-      </div>
       
       <div class="clearfix"></div>
       
