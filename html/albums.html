@@ -8,13 +8,14 @@
         <link rel="stylesheet" href="/css/nav.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="/js/RTN.js"></script>
+        <script src="/js/generatePicturesAss.js"></script>
         <title>Test Project</title>
     </head>
 
 <body>
     <h1>Picture Viewer Project</h1>
     <div class="topnav" id="myTopnav">
-      <a href="index.html" class="active">Start</a>
+      <a href="index.html">Start</a>
       <a href="pictures.html">Pictures</a>
       <a href="albums.html">Albums</a>
       <a href="#About us">About us</a>
@@ -28,7 +29,7 @@
       <div class="gridWrap">
         <div class="albumContainer">
           <div class="gallery">
-            <a href="pictures.html">
+            <a href="pictures.html" onclick="picture('Galaxies')">
               <img src="\app-data\library\pictures\album-header\A Galactic Spectacle_4862916839_o~small.jpg" alt="flowers-276014__340" width="600" height="400">
             </a>
             <div class="desc">Galaxies</div>

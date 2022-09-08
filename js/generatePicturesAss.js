@@ -45,7 +45,7 @@ function setCommentAndTitle(){
 
 }
 
-async function picture(albumTitle){
+async function loadPictures(albumTitle){
     let rowContainer = document.querySelector(".row");
     let starGroups = 1;
     let starId= 0;
@@ -59,7 +59,7 @@ async function picture(albumTitle){
             let pictures = json.albums[i].pictures;
 
             //check the album title
-            if(json.albums[i].title === `${albumTitle}`){
+            if(json.albums[i].title === `${albumTitle}` || `${albumTitle}` === "all" ){
                 //get out each and every picture in lowRes
                 for(let j = 0; j<pictures.length; j++){
                     
@@ -144,3 +144,4 @@ async function picture(albumTitle){
         
     });
 }
+
