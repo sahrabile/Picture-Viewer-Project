@@ -142,6 +142,8 @@ a{
     padding: 0 6px;
     float: left;
     width: 24.99999%;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
   }
 
   .imageContainer .editButton{
@@ -208,6 +210,10 @@ a{
     margin-left: 25%;
     font-size: 1rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  .hiddenValue{
+    display: none;
   }
 
   
