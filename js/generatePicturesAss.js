@@ -1,3 +1,22 @@
+//add eventlistener to albums
+const albumArray = document.querySelectorAll(".albumContainer");
+const nameArray = ["Galaxies","Nebulas","Hubble telescope", "Planets", "Newborn stars"];
+for(let i = 0; i<nameArray.length;i++){
+    albumArray[i].addEventListener('click', (event) =>  {
+        event.preventDefault();
+        /*for (const child of row.childNodes) {
+            child.remove();
+          }*/
+        loadPictures(`${nameArray[i]}`);
+
+    })
+}
+
+const clearButton = document.getElementById("clear");
+clearButton.addEventListener("click", (event) => {
+    clearPictures();
+})
+
 function eraseRating(div){
     //find a way to hit all the children in div, itterate over them and erase them
     let querySelector = '#'+ div;
@@ -92,12 +111,13 @@ async function loadPictures(albumTitle){
                     editButton.className = "editButton";
                     editButton.setAttribute("id", `Edit${starGroups}`);
                     //store the value for edit in hidden p and show comments
-                    editButton.onclick = function() {
+                    editButton.addEventListener('click', (event) => {
+                        event.preventDefault();
                         var popup = document.getElementById("popUp");
                         var popupHidden = document.getElementById("hiddenValue");
                         popup.style.display = "block";
                         popupHidden.innerHTML = `${titleFade.id},${descFade.id}`;
-                      }
+                      });
                     let inner = document.createElement("i");
                     inner.className = "fa-regular fa-pen-to-square";
                     editButton.appendChild(inner);
@@ -143,5 +163,14 @@ async function loadPictures(albumTitle){
         }
         
     });
+}
+
+function clearPictures(){
+    const row = document.getElementById("row");
+    const children = row.children;
+    
+        for(let child of children){
+            child.remove();
+        }
 }
 
