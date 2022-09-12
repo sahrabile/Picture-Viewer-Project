@@ -4,18 +4,25 @@ const nameArray = ["Galaxies","Nebulas","Hubble telescope", "Planets", "Newborn 
 for(let i = 0; i<nameArray.length;i++){
     albumArray[i].addEventListener('click', (event) =>  {
         event.preventDefault();
-        /*for (const child of row.childNodes) {
-            child.remove();
-          }*/
+        clearPictures();
+        const row = document.createElement("div");
+        row.className = "row";
+        document.body.appendChild(row);
         loadPictures(`${nameArray[i]}`);
-
+        let button = document.getElementById("backButton");
+        button.style.display = "block";
+        button.addEventListener("click", (event)=>{
+            for(let album of albumArray){
+                album.style.display = "grid";
+                clearPictures();
+                button.style.display = "none";
+            }
+        })
+        for(let album of albumArray){
+            album.style.display = "none";
+        }
     })
 }
-
-const clearButton = document.getElementById("clear");
-clearButton.addEventListener("click", (event) => {
-    clearPictures();
-})
 
 function eraseRating(div){
     //find a way to hit all the children in div, itterate over them and erase them
@@ -166,11 +173,10 @@ async function loadPictures(albumTitle){
 }
 
 function clearPictures(){
-    const row = document.getElementById("row");
-    const children = row.children;
+    const row = document.querySelector(".row");
+    if(row !== null){
+        row.remove();
+    }
     
-        for(let child of children){
-            child.remove();
-        }
 }
 

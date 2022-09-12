@@ -11,16 +11,16 @@ a{
     background-color: #FEF5ED;
   }
 
-  div.gallery {
+  div.galleryA {
     border: 1px solid #ccc;
     width: 100%;
   }
   
-  div.gallery:hover {
+  div.galleryA:hover {
     border: 1px solid #777;
   }
   
-  div.gallery img {
+  div.galleryA img {
     width: 100%;
     height: auto;
   }
@@ -47,6 +47,10 @@ a{
     grid-template-rows: repeat(1,1fr);
     overflow: hidden;
     height: fit-content;
+  }
+
+  #backButton{
+    display: none;
   }
 
   /*this is maybe not necessary */
