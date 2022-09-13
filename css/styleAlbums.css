@@ -51,6 +51,12 @@ a{
 
   #backButton{
     display: none;
+    border-radius: 5%;
+    font-size: 1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 5rem;
+    background-color: rgb(209, 156, 156);
+
   }
 
   /*this is maybe not necessary */

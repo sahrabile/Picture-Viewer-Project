@@ -1,28 +1,121 @@
+class Album{
+    constructor(id, title, comment,path,headerImage,pictures){
+      this.id = id;
+      this.title = title;
+      this.comment = comment;
+      this.path = path;
+      this.headerImage = headerImage;
+      this.pictures = pictures;
+    }
+  
+    updatePictures(pictureObject){
+      for(let picture of this.pictures){
+        if(pictureObject.id === picture.id){
+          picture.title = pictureObject.title;
+          picture.comment = pictureObject.comment;
+        }
+      }
+    }
+  }
+  
+  class Picture{
+    constructor(id, title, comment, imgLoRes, imgHiRes){
+      this.id = id;
+      this.title = title;
+      this.comment = comment;
+      this.imgLoRes = imgLoRes;
+      this.imgHiRes = imgHiRes;
+    }
+  
+    changeTitle(newTitle){
+      this.title = newTitle;
+    }
+  
+    changeComment(newComment){
+      this.comment = newComment;
+    }
+  }
+  
 //add eventlistener to albums
 const albumArray = document.querySelectorAll(".albumContainer");
 const nameArray = ["Galaxies","Nebulas","Hubble telescope", "Planets", "Newborn stars"];
 for(let i = 0; i<nameArray.length;i++){
     albumArray[i].addEventListener('click', (event) =>  {
         event.preventDefault();
+        //erase all pictures
         clearPictures();
+
+        //add a new row element in body
         const row = document.createElement("div");
         row.className = "row";
         document.body.appendChild(row);
+
+        //load the right pictures for clicked album
         loadPictures(`${nameArray[i]}`);
+
+        //create a back button to go back to album view
         let button = document.getElementById("backButton");
         button.style.display = "block";
+
+        //add an event listener to button
         button.addEventListener("click", (event)=>{
             for(let album of albumArray){
                 album.style.display = "grid";
                 clearPictures();
                 button.style.display = "none";
             }
-        })
+        });
+        
+        //set album view to none
         for(let album of albumArray){
             album.style.display = "none";
         }
     })
 }
+
+async function saveChanges(pictureID, newTitle, newComment){
+    let albumArray = [];
+    await fetch('\\app-data\\library\\picture-library.json')
+      .then((response) => response.json())
+      .then((json) => {
+          for(let i = 0; i< json.albums.length; i++){
+            let album = new Album(json.albums[i].id,json.albums[i].title,json.albums[i].comment,json.albums[i].path,json.albums[i].headerImage,json.albums[i].pictures);
+            for(let j = 0; j<album.pictures.length; j++){
+                let picture = new Picture(album.pictures[j].id, album.pictures[j].title, album.pictures[j].comment, album.pictures[j].imgLoRes, album.pictures[j].imgHiRes);
+                if(picture.id === pictureID){
+                    picture.title = newTitle;
+                    picture.comment = newComment;
+                    album.updatePictures(picture);
+                }
+            }
+            albumArray.push(album);
+          } 
+      });
+      
+      const url = 'http://localhost:3000/saveJson';
+          try {
+            const response = await fetch(url, {
+                mode: 'no-cors',
+                method: 'post',
+                headers: {'content-type' : 'application/json'},
+                body: JSON.stringify(albumArray)
+            });
+            const result = response.text();
+        
+            if (response.ok) {
+              alert("updated json");
+            }
+            else {
+              alert("Transmission error");
+            }
+            console.log(result);
+            console.log(response);
+          }
+          catch {
+            alert("Fetch error");
+          }
+  }
+
 
 function eraseRating(div){
     //find a way to hit all the children in div, itterate over them and erase them
@@ -67,6 +160,8 @@ function setCommentAndTitle(){
     document.getElementById("titleInput").value ="";
     document.getElementById(`Comment`).value ="";
     popup.style.display = "none";
+    //add picture id, title and comment
+    saveChanges(array[2],newTitle,newComment);
 
 
 }
@@ -123,7 +218,7 @@ async function loadPictures(albumTitle){
                         var popup = document.getElementById("popUp");
                         var popupHidden = document.getElementById("hiddenValue");
                         popup.style.display = "block";
-                        popupHidden.innerHTML = `${titleFade.id},${descFade.id}`;
+                        popupHidden.innerHTML = `${titleFade.id},${descFade.id},${pictures[j].id}`;
                       });
                     let inner = document.createElement("i");
                     inner.className = "fa-regular fa-pen-to-square";
