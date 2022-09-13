@@ -1,8 +1,12 @@
 var express = require('express');
+const cors = require('cors');
 var bodyParser = require('body-parser');
 var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())
+app.use(cors({
+  origin: '*'
+}));
 
 var port = 3000;
 
@@ -11,6 +15,7 @@ app.post('/saveJson', function(req, res) {
     console.log("response status: "+res.statusCode);
     console.log('body is ',req.body);
     res.send(req.body);
+    //now update json file!
 });
 
 // start the server

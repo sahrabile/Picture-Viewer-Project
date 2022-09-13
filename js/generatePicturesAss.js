@@ -95,7 +95,7 @@ async function saveChanges(pictureID, newTitle, newComment){
       const url = 'http://localhost:3000/saveJson';
           try {
             const response = await fetch(url, {
-                mode: 'no-cors',
+                mode: 'cors',
                 method: 'post',
                 headers: {'content-type' : 'application/json'},
                 body: JSON.stringify(albumArray)
