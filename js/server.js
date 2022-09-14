@@ -18,7 +18,6 @@ var port = 3000;
 app.post('/saveJson', function(req, res) {
     console.log('receiving data ...');
     console.log("response status: "+res.statusCode);
-    console.log('body is ',req.body);
     res.send(req.body);
     //now update json file!
     const reqBody = JSON.stringify(req.body);

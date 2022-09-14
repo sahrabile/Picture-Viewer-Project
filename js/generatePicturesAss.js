@@ -188,9 +188,7 @@ function setCommentAndTitle(){
     let titleContainer = document.getElementById(`${array[0]}`);
     let commentContainer = document.getElementById(`${array[1]}`);
     const pictureId = array[2];
-    const starGroupName = array[0].charAt(array[0].length-1);
-  
-    
+
     let newTitle = getValue("titleInput");
     let newComment = getValue(`Comment`);
 
@@ -201,7 +199,6 @@ function setCommentAndTitle(){
     document.getElementById(`Comment`).value ="";
     popup.style.display = "none";
 
-    let rating = getStarRating(starGroupName);
     //add picture id, title, comment and current rating
     saveChanges(pictureId,newTitle,newComment);
 
