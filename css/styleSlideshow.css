@@ -13,9 +13,9 @@ a{
     float: left;
     color: #f2f2f2;
     text-align: center;
-    padding: 20px 114px;
+    padding: 21.25rem 7.125rem;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 1.063rem;
     width: 10%;
 
   }
@@ -41,7 +41,7 @@ a{
 * {box-sizing:border-box}
 
 .slideshow-container{
-max-width: 1000px;
+max-width: 62.5rem;
 position: relative;
 margin: auto;
 }
@@ -55,19 +55,19 @@ margin: auto;
     position: absolute;
     top: 50%;
     width: auto;
-    margin-top: -22px;
-    padding: 16px;
+    margin-top: -1.375rem;
+    padding: 1rem;
     color: grey;
-    font-weight: bold;
-    font-size: 18px;
+    font-weight: bold;  
+    font-size: 1.125rem;
     transition: 0,6s ease;
-    border-radius: 0 3px 3px 0;
+    border-radius: 0 0.188rem 0.188rem 0;
     user-select: none;
 }
 
 .next{
 right: 0;
-border-radius: 3px 0 0 3px;
+border-radius: 0.188rem 0 0 0.188rem;
 }
 
 .prev:hover, .next:hover{
@@ -76,27 +76,27 @@ background-color: rgba(128, 128, 100);
 
 .text{
     color: #f2f2f2;
-    font-size: 15px;
-    padding: 8px 12px;
+    font-size: 0.938rem;
+    padding: 0.5rem 0.75rem;
     position: absolute;
-    bottom: 8px;
+    bottom: 0.5rem;
     width: 100%;
     text-align: center;
 }
 
 .numbertext{
     color: #f2f2f2;
-    font-size: 12px;
-    padding: 8px 12px;
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
     position: absolute;
     top: 0;
 }
 
 .dot{
     cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
+    height: 0.938rem;
+    width: 0.938rem;
+    margin: 0 0.125rem;
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;

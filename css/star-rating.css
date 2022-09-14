@@ -46,7 +46,7 @@
     top: 0;
     opacity: 0;
     transition: .5s;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+    text-shadow: 0 0.125rem 0.313rem rgba(0, 0, 0, .5);
     margin:auto;
 }
 
@@ -67,12 +67,12 @@ button{
 
 button:hover{
     opacity: 1;
-    border: 1px solid grey;
+    border: 0.063rem solid grey;
     border-radius: 5%;
 }
 
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 59.375rem) {
     .rating{
         height: fit-content;
     }
@@ -93,7 +93,7 @@ button:hover{
     }
   }
   
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 31.25rem) {
 
     .rating{
         height: fit-content;
