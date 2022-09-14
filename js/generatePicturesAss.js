@@ -74,8 +74,12 @@ async function loadPictures(albumTitle){
                     img.src = "../"+json.albums[i].path + "/"+pictures[j].imgLoRes;
                     img.setAttribute("width", 600);
                     img.setAttribute("height", 400);
-                    img.setAttribute("onclick", "myFunction(this);")
+                    img.setAttribute("onclick", "Function(this);")
                     img.setAttribute("data-description", pictures[j].comment)
+                        img.onclick = function(){
+                            var modal = document.getElementById("myModal");
+                            modal.style.display = "block";
+                        }
 
                     let descFade = document.createElement("div");
                     descFade.className = "descrip fade";

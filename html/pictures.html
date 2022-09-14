@@ -11,8 +11,6 @@
         <link rel="stylesheet" href="/css/nav.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="/js/generatePicturesAss.js"></script>
-        <script src="/js/RTN.js"></script>
-        <script src="/js/sAP.JS"></script>
         <title>Test Project</title>
     </head>
 
@@ -47,14 +45,24 @@
 
   <br>
 
-  <div class="container">
+  <!--<div class="container">
     <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-  
-    <img id="expandedImg" style="width:100%">
-  
+      
+      <img id="expandedImg">
+    
     <div id="imgtext"></div>
     <div id="imgdesc"></div>
   </div>
+
+-->
+
+<div class="container" id="myModal">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img class ="full-img" id="expandedImg">
+</div>
+
+<script src="/js/sAP.JS"></script>
 <script src="\js\star-rating.js"></script>
+<script src="/js/RTN.js"></script>
 </body>
 </html>
