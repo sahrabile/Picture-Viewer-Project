@@ -23,6 +23,12 @@
     color: white;
 }
 
+.topnav a.split{
+    background-color: #045daa;
+    float: right;
+    color: white;
+}
+
 .topnav .icon {
     display: none;
 }

@@ -6,22 +6,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--Link to the font awesome where I took the star from-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-        <link rel="stylesheet" type="text/css" href="\css\styleAlbumPhotos.css">
-        <link rel="stylesheet" href="\css\star-rating.css">
+        <link rel="stylesheet" type="text/css" href="/css/styleAlbumPhotos.css">
+        <link rel="stylesheet" href="/css/star-rating.css">
         <link rel="stylesheet" href="/css/nav.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="/js/RTN.js"></script>
-        <script src="JS/sAP.JS"></script>
         <title>Test Project</title>
     </head>
 
 <body>
     <h1>Picture Viewer Project</h1>
     <div class="topnav" id="myTopnav">
-      <a href="index.html" class="active">Start</a>
-      <a href="pictures.html">Pictures</a>
+      <a href="index.html">Start</a>
+      <a href="pictures.html" class="active">Pictures</a>
       <a href="albums.html">Albums</a>
       <a href="#About us">About us</a>
+      <a href="slideshow.html" class="split">Slideshow</a>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
   </a>
@@ -33,7 +32,6 @@
 
     <div class="imageContainer">
       <div class="gallery">
-
         <img class="blur" src="\app-data\library\pictures\galaxies\0700064~orig.jpg" alt="Nature" width="600" height="400" onclick="myFunction(this);" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat voluptatem, dicta assumenda doloribus, accusamus magni, quo laboriosam deserunt facere rem dolorem accusantium qui est porro. Tempore quisquam explicabo vel quibusdam?">
         <div class="descrip fade">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni quo porro aliquam praesentium aperiam, impedit enim rem eum temporibus dolore laboriosam officia placeat sit facere quos distinctio id quae quasi.</div>
         <div class="title fade">Name</div>
@@ -72,13 +70,13 @@
         <label for="star9"></label>
         <input type="radio" name="star3" id="star10">
         <label for="star10"></label>
+
     </div>
     <button class="editButton"><i class="fa-regular fa-pen-to-square"></i>
     </div>
 
     <div class="imageContainer">
       <div class="gallery">
-
       <img class="blur" src="\app-data\library\pictures\galaxies\GSFC_20171208_Archive_e000117~orig.jpg" alt="test" width="600" height="400" onclick="myFunction(this);" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat voluptatem, dicta assumenda doloribus, accusamus magni, quo laboriosam deserunt facere rem dolorem accusantium qui est porro. Tempore quisquam explicabo vel quibusdam?">
       <div class="descrip fade">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis provident eos tempora illum ab voluptates, commodi non alias debitis eligendi quos quasi harum vero repudiandae voluptatem iste quae dolorum aspernatur.</div>
       <div class="title fade">Name</div>
@@ -95,13 +93,13 @@
         <input type="radio" name="star4" id="star15">
         <label for="star15"></label>
     </div>
+    
     </div>
     <button class="editButton"><i class="fa-regular fa-pen-to-square"></i>
     </div>
 
     <div class="imageContainer">
       <div class="gallery">
-
         <img class="blur" src="\app-data\library\pictures\galaxies\GSFC_20171208_Archive_e000117~small.jpg" alt="test" width="600" height="400" onclick="myFunction(this);" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat voluptatem, dicta assumenda doloribus, accusamus magni, quo laboriosam deserunt facere rem dolorem accusantium qui est porro. Tempore quisquam explicabo vel quibusdam?">
         <div class="descrip fade">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis provident eos tempora illum ab voluptates, commodi non alias debitis eligendi quos quasi harum vero repudiandae voluptatem iste quae dolorum aspernatur.</div>
           <div class="title fade">Name</div>
@@ -145,7 +143,9 @@
     <div id="imgtext"></div>
     <div id="imgdesc"></div>
   </div>
+<script src="/js/RTN.js"></script>  
 <script src="\js\star-rating.js"></script>
 <script src="\js\Comments.js"></script>
+<script src="/js/sAP.JS"></script>
 </body>
 </html>
