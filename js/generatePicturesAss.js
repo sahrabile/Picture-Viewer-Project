@@ -155,7 +155,6 @@ async function saveChanges(pictureID, newTitle, newComment){
 
 
 function eraseRating(div){
-    //find a way to hit all the children in div, itterate over them and erase them
     let querySelector = '#'+ div;
     let allChildren = document.querySelector(querySelector).childNodes;
     for(let i=0; i<allChildren.length;i++){
@@ -178,7 +177,6 @@ function getValue(componentID){
   return document.getElementById(`${componentID}`).value;
 }
 
-//need a good way to put in all the different names of components when they autogenerate
 function setCommentAndTitle(){
     //get the hidden value
     var popup = document.getElementById("popUp");
@@ -238,6 +236,7 @@ async function loadPictures(albumTitle){
                     img.setAttribute("data-description", pictures[j].comment)
                     img.onclick = function(){
                         var modal = document.getElementById("myModal");
+                        loadExpandImg(pictures[j].imgHiRes, pictures[j].comment, pictures[j].title, albumTitle);
                         modal.style.display = "block";
                       };
                     img.setAttribute("id", pictures[j].id);
@@ -347,3 +346,14 @@ function getStarRating(inputGroupName){
  
 }
 
+async function loadExpandImg(imageHi, imgText, imgTitle, albumTitle){
+  const expandContainer = document.getElementById("expandedImg");
+  const titleContainer = document.getElementById("imgtext");
+  const commentContainer = document.getElementById("imgdesc");
+  const path = albumTitle.toLowerCase().replace(/\s/g, '-')+"\\"+imageHi;
+
+  expandContainer.setAttribute("src", "\\app-data\\library\\pictures\\"+path);
+  titleContainer.innerHTML = imgTitle;
+  commentContainer.innerHTML = imgText;
+  
+}
