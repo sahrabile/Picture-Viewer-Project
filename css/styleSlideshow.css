@@ -2,34 +2,6 @@ a{
     color: #FFFFFF;
 }
 
-.topnav {
-    background-color:#203239;
-    overflow: auto;
-    width: 100%;    
-  }
-  
-  .topnav a {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 20px 114px;
-    text-decoration: none;
-    font-size: 17px;
-    width: 10%;
-
-  }
-  
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  .topnav a.active {
-    background-color: #D3E4CD;
-    color: white;
-  }
-
   h1{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
@@ -39,6 +11,54 @@ a{
   }
 
 * {box-sizing:border-box}
+
+.btn {
+    border: 2px solid #2196F3;
+    background-color: white;
+    color: #2196F3;
+    padding: 14px 28px;
+    font-size: 16px;
+    float: right;
+    cursor: pointer;
+  }
+
+  .modal{
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0,4);
+
+}
+
+.modal-content{
+background-color: #fefefe;
+margin: 15% auto;
+padding: 20px;
+border: 1px solid #888;
+width: 80%;
+height: 50%;
+
+}
+
+.close{
+    position: relative;
+    float: right;
+    color: #aaa;
+    float: top;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus{
+    color: lightgrey;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 .slideshow-container{
 max-width: 1000px;
@@ -53,7 +73,7 @@ margin: auto;
 .prev, .next{
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: 200px;
     width: auto;
     margin-top: -22px;
     padding: 16px;
@@ -71,7 +91,7 @@ border-radius: 3px 0 0 3px;
 }
 
 .prev:hover, .next:hover{
-background-color: rgba(128, 128, 100);
+background-color: #2196F3;
 }
 
 .text{
@@ -105,6 +125,13 @@ background-color: rgba(128, 128, 100);
 
 .active, .dot:hover{
     background-color: #717171;
+}
+
+#dotDiv{
+    position: absolute;
+    top:400px;
+    left: 350px;
+    width: 20%;
 }
 
 .fade{

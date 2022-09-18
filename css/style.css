@@ -1,0 +1,30 @@
+.popup{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .popup-overlay{
+    background-color:#717171;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+  }
+
+  .main-popup{
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    width: 50%;
+    z-index: 1;
+    background: lightgray;
+    padding: 30px 20px;
+    line-height: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
