@@ -26,7 +26,7 @@ a{
   }
   
   div.desc {
-    padding: 15px;
+    padding: 0.938rem;
     text-align: center;
   }
   
@@ -35,7 +35,7 @@ a{
   }
   
   .albumContainer {
-    padding: 0 6px;
+    padding: 0 0.375rem;
     float: left;
     width: 20rem;
     height: fit-content;
@@ -60,7 +60,7 @@ a{
   }
 
   /*this is maybe not necessary */
-  @media screen and (max-width: 1500px){
+  @media screen and (max-width: 93.75rem){
     .gridWrap{
       display: grid;
       grid-template-columns: repeat(4,1fr);
@@ -68,7 +68,7 @@ a{
   }
   }
 
-  @media screen and (max-width: 1200px){
+  @media screen and (max-width: 75rem){
     .gridWrap{
       display: grid;
       grid-template-columns: repeat(3,1fr);
@@ -76,7 +76,7 @@ a{
   }
   }
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 56.25rem) {
     .gridWrap{
       display: grid;
       grid-template-columns: repeat(3,1fr);
@@ -84,10 +84,10 @@ a{
   }
   }
   
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 43.75rem) {
     .albumContainer {
       width: 20rem;
-      margin: 6px 0;
+      margin: 0.375rem 0;
     }
     .gridWrap{
       display: grid;
@@ -97,7 +97,7 @@ a{
  
 }
   
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 31.25rem) {
     .gridWrap{
       display: grid;
       grid-template-columns: repeat(1,1fr);

@@ -255,6 +255,35 @@ div.gallery > img {
 .full-img.open{
   object-position: center;
 }
+
+.full-img.open > #imgtext, #imgdesc{
+text-align: left;
+top: 85%;
+left: 25%;
+color: #FFFFFF;
+}
+
+#imgtext{
+  text-align: center;
+  height: 10%;
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#imgdesc{
+  position: absolute;
+  right: 320px;
+  color: white;
+  padding-left: 20px;
+  background-color: rgba(0,0,0,0.4);
+  padding-right: 20px;
+  z-index: 100;
+  width: 50%;
+}
   
 /*Pop-up Css*/
 
