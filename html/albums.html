@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="\css\star-rating.css">
         <link rel="stylesheet" href="/css/nav.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/styleSlideshow.css">
         
         <script src="/js/RTN.js"></script>
         <script src="/js/sAP.JS"></script>
@@ -30,7 +31,13 @@
     
       <br>
 
-      <button id="backButton">BACK</button>
+      <div class="buttonFlex">
+        <button id="backButton">BACK</button>
+        <button id="startSlide" class="startSlide">Slideshow</button>
+        <button id="start" class="startSlide">Go!</button>
+        <button id="cancle" class="startSlide">Cancle</button>
+      </div>
+     
 
       <div class="gridWrap">
         <div class="albumContainer">
@@ -98,6 +105,18 @@
         <img class ="full-img" id="expandedImg">
         <div id="imgtext"></div>
         <div id="imgdesc"></div>
+      </div>
+
+      <div id="myModalL" class="modal">
+        <div class="modal-content">
+          <span class="modal-content">
+            <button id="close" class="close">&times;</button>
+            <div class="slideshow-container" id="slideContainer">
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </span>
+        </div>
       </div>
       
       

@@ -59,15 +59,24 @@ for(let i = 0; i<nameArray.length;i++){
         let button = document.getElementById("backButton");
         button.style.display = "block";
 
+        let buttonSlide = document.getElementById("startSlide");
+        buttonSlide.style.display = "block";
+
+        let start = document.getElementById("start");
+        let cancle = document.getElementById("cancle");
+
         //add an event listener to button
         button.addEventListener("click", (event)=>{
             for(let album of albumArray){
                 album.style.display = "grid";
                 clearPictures();
                 button.style.display = "none";
+                buttonSlide.style.display = "none";
+                start.style.display ="none";
+                cancle.style.display = "none";
             }
         });
-        
+
         //set album view to none
         for(let album of albumArray){
             album.style.display = "none";
@@ -224,6 +233,19 @@ async function loadPictures(albumTitle){
                     var imageContainer = document.createElement('div');
                     imageContainer.className = "imageContainer";
 
+                    let checkContainer = document.createElement('label');
+                    checkContainer.className = "checkContainer";
+                    checkContainer.innerHTML = "Select";
+                    checkContainer.style.display = "none";
+
+                    let checkbox = document.createElement("input");
+                    checkbox.type = "checkbox"
+                    checkbox.checked = false;
+                    checkbox.className = "checkbox";
+
+                    let checkSpan = document.createElement("span");
+                    checkSpan.className = "checkmark";
+
                     let gallery = document.createElement("div");
                     gallery.className = "gallery";
 
@@ -241,7 +263,6 @@ async function loadPictures(albumTitle){
                       };
                     img.setAttribute("id", pictures[j].id);
 
-
                     let descFade = document.createElement("div");
                     descFade.className = "descrip fade";
                     descFade.setAttribute("id", `desc${starGroups}`);
@@ -256,6 +277,7 @@ async function loadPictures(albumTitle){
                     let editButton = document.createElement("button");
                     editButton.className = "editButton";
                     editButton.setAttribute("id", `Edit${starGroups}`);
+
                     //store the value for edit in hidden p and show comments
                     editButton.addEventListener('click', (event) => {
                         event.preventDefault();
@@ -306,19 +328,24 @@ async function loadPictures(albumTitle){
                         ratingContainer.appendChild(label);
                     }
                     starGroups++;
+
+                    checkContainer.appendChild(checkbox);
+                    checkContainer.appendChild(checkSpan);
                     
                     gallery.appendChild(img);
                     gallery.appendChild(descFade);
                     gallery.appendChild(titleFade);
+
+                    imageContainer.appendChild(checkContainer);
                     imageContainer.appendChild(gallery);
                     imageContainer.appendChild(ratingContainer);
                     imageContainer.appendChild(editButton);
+
                     rowContainer.appendChild(imageContainer);
                 }
-            }
-                
-                
+            }     
         }
+        prepareSlideshow();
         
     });
 }
@@ -346,7 +373,7 @@ function getStarRating(inputGroupName){
  
 }
 
-async function loadExpandImg(imageHi, imgText, imgTitle, albumTitle){
+function loadExpandImg(imageHi, imgText, imgTitle, albumTitle){
   const expandContainer = document.getElementById("expandedImg");
   const titleContainer = document.getElementById("imgtext");
   const commentContainer = document.getElementById("imgdesc");
@@ -357,3 +384,158 @@ async function loadExpandImg(imageHi, imgText, imgTitle, albumTitle){
   commentContainer.innerHTML = imgText;
   
 }
+
+function prepareSlideshow(){
+  let slideShowPictures= [];
+  const checkContainers = document.querySelectorAll(".checkContainer");
+  const checkboxes = document.querySelectorAll(".checkbox");
+  const editButtons = document.querySelectorAll(".editButton");
+  const imageContainers = document.querySelectorAll(".imageContainer");
+  const slideButton = document.getElementById("startSlide");
+  const start = document.getElementById("start");
+  const cancle = document.getElementById("cancle");
+
+  //show all checkboxes to choose pictures for slideshow
+  slideButton.addEventListener("click", (event) =>{
+    slideButton.style.display = "none";
+    start.style.display = "block";
+    cancle.style.display = "block";
+    for(let checkbox of checkContainers){
+      checkbox.style.display = "block";
+    }
+    for(let edit of editButtons){
+      edit.style.display = "none";
+    }
+  });
+
+  cancle.addEventListener("click", (event) => {
+    start.style.display = "none";
+    cancle.style.display = "none";
+    startSlide.style.display = "block";
+    for(let box of checkboxes){
+      box.checked = false;
+    }
+    for(let checkbox of checkContainers){
+      checkbox.style.display = "none";
+    }
+    for(let edit of editButtons){
+      edit.style.display = "block";
+    }
+  });
+
+  start.addEventListener("click", (event) => {
+    cancle.style.display = "none";
+    start.style.display = "none";
+    slideButton.style.display = "block";
+    for(let container of imageContainers){
+      let id = getImageForSlideShow(container);
+      if(id !== undefined){
+        slideShowPictures.push(id);
+      }
+    }
+    for(let box of checkboxes){
+      box.checked = false;
+    }
+    for(let checkbox of checkContainers){
+      checkbox.style.display = "none";
+    }
+    for(let edit of editButtons){
+      edit.style.display = "block";
+    }
+    generateSlideshowContainer(slideShowPictures);
+    slideShowPictures = [];
+  });
+}
+
+let slideIndex = 1;
+
+function getImageForSlideShow(imageContainer){
+  const childNodesImageContainer = imageContainer.childNodes;
+  const childNodesLabel = childNodesImageContainer[0].childNodes;
+  const checkbox = childNodesLabel[1];
+  const childNodesGallery = childNodesImageContainer[1].childNodes;
+  const img = childNodesGallery[0];
+
+  if(checkbox.checked){
+    return img.id;
+  }
+}
+
+async function generateSlideshowContainer(pictureArray){
+  const myModal = document.getElementById("myModalL");
+  const slideContainer = document.getElementById("slideContainer");
+  const closeButton = document.getElementById("close");
+  await fetch('\\app-data\\library\\picture-library2.json')
+    .then((response) => response.json())
+    .then((json) => {
+        //get out each and every album
+        for( let i = 0; i< json.albums.length; i++){
+            let pictures = json.albums[i].pictures;
+                //get out each and every picture 
+                for(let j = 0; j<pictures.length; j++){
+                  //compare each picture with each item in pictureArray
+                  for(let k = 0; k<pictureArray.length; k++){
+                    if(pictureArray[k] === pictures[j].id){
+                      //build the slideshow
+                      let mySlide = document.createElement("div");
+                      mySlide.className = "mySlides"; //add " fade" to restore
+
+                      let numberText = document.createElement("div");
+                      numberText.className = "numbertext";
+                      numberText.innerHTML = `${k+1} / ${pictureArray.length}`;
+
+                      let albumTitle = json.albums[i].title;
+                      let path = albumTitle.toLowerCase().replace(/\s/g, '-')+"\\"+pictures[j].imgHiRes;
+                      let img = document.createElement("img");
+                      img.src = "\\app-data\\library\\pictures\\"+path;
+                      img.setAttribute("id","slideImg");
+
+                      let caption = document.createElement("div");
+                      caption.className = "text";
+                      caption.innerHTML = `${pictures[j].title}`;
+
+                      mySlide.appendChild(numberText);
+                      mySlide.appendChild(img);
+                      mySlide.appendChild(caption);
+
+                      slideContainer.appendChild(mySlide);
+                      currentSlide(0);
+                    }
+                  }
+                }
+              }
+
+              closeButton.addEventListener("click",(event)=> {
+                myModal.style.display = "none";
+                let children = slideContainer.childNodes;
+                for(let child of children){
+                  if(child.className === "mySlides"){
+                    child.remove();
+                  }
+                }
+                //remove slides from slide container
+
+              });
+              myModal.style.display = "block";
+            });
+}
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n){
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+}
+

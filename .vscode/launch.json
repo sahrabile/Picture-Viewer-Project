@@ -30,7 +30,7 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "lisasProject",
+            "name": "groupProject",
             "url": "http://localhost:5502/${relativeFileDirname}/../html/index.html",
             "webRoot": "${workspaceFolder}"
         },

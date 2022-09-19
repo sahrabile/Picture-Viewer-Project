@@ -137,7 +137,7 @@ div.gallery > img {
 }
 
 /*here are descriptions for checkboxes! need to find the right container*/
-  .container {
+  .checkContainer {
     display: block;
     position: absolute;
     padding-left: 35px;
@@ -155,7 +155,7 @@ div.gallery > img {
   }
   
   /* Hide the browser's default checkbox */
-  .container input {
+  .checkContainer input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -174,12 +174,12 @@ div.gallery > img {
   }
   
   /* On mouse-over, add a grey background color */
-  .container:hover input ~ .checkmark {
+  .checkContainer:hover input ~ .checkmark {
     background-color: #ccc;
   }
   
   /* When the checkbox is checked, add a blue background */
-  .container input:checked ~ .checkmark {
+  .checkContainer input:checked ~ .checkmark {
     background-color: #2196F3;
   }
   
@@ -191,12 +191,12 @@ div.gallery > img {
   }
   
   /* Show the checkmark when checked */
-  .container input:checked ~ .checkmark:after {
+  .checkContainer input:checked ~ .checkmark:after {
     display: block;
   }
   
   /* Style the checkmark/indicator */
-  .container .checkmark:after {
+  .checkContainer .checkmark:after {
     left: 9px;
     top: 5px;
     width: 5px;
@@ -311,18 +311,19 @@ background-color: rgba(0,0,0,0.4);
   display: none;
 }
 
-/*more lahoud changes*/
-.SubmitButton{
-  margin-top: 1rem;
-  width: 50%;
-  height: 10rem;
-  margin-left: 25%;
-  font-size: 1rem;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.buttonFlex{
+  width: 100%;
+  height: fit-content;
+  display:flex;
+  flex-direction: row;
+  justify-content: right;
 }
 
-
-
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
 @media only screen and (max-width: 43.75rem) {
   
@@ -336,10 +337,9 @@ background-color: rgba(0,0,0,0.4);
   .imageContainer {
     width: 100%;
   }
+
+  .buttonFlex{
+    justify-content: center;
+  }
 }
 
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
