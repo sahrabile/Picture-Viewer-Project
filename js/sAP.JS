@@ -43,14 +43,18 @@
 
 function Function(){
   var image = document.getElementsByClassName("blur")
+  const id = image.id;
   // need to itterate over all buttons
   var modal = document.getElementById("myModal");
-
 
   // When the user clicks on the button, open the popup
   image.onclick = function() {
     modal.style.display = "block";
   }
+}
+
+async function loadExpandImg(imageID){
+  
 }
   
 

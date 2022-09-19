@@ -5,10 +5,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="/css/styleAlbums.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="\css\styleAlbumPhotos.css">
+        <link rel="stylesheet" href="\css\star-rating.css">
         <link rel="stylesheet" href="/css/nav.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
         <script src="/js/RTN.js"></script>
-        <script src="/js/generatePicturesAss.js"></script>
+        <script src="/js/sAP.JS"></script>
         <title>Test Project</title>
     </head>
 
@@ -26,10 +30,12 @@
     
       <br>
 
+      <button id="backButton">BACK</button>
+
       <div class="gridWrap">
         <div class="albumContainer">
-          <div class="gallery">
-            <a href="pictures.html" onclick="picture('Galaxies')">
+          <div class="galleryA">
+            <a href="">
               <img src="\app-data\library\pictures\album-header\A Galactic Spectacle_4862916839_o~small.jpg" alt="flowers-276014__340" width="600" height="400">
             </a>
             <div class="desc">Galaxies</div>
@@ -38,8 +44,8 @@
         
         
         <div class="albumContainer">
-          <div class="gallery">
-            <a target="" href="pictures.html">
+          <div class="galleryA">
+            <a target="" href="">
               <img src="\app-data\library\pictures\album-header\GSFC_20171208_Archive_e000383~small.jpg" alt="istockphoto-1146517111-612x612" width="600" height="400">
             </a>
             <div class="desc">Nebulas</div>
@@ -47,8 +53,8 @@
         </div>
         
         <div class="albumContainer">
-          <div class="gallery">
-            <a target="" href="pictures.html">
+          <div class="galleryA">
+            <a target="" href="">
               <img src="\app-data\library\pictures\album-header\GSFC_20171208_Archive_e002151~small.jpg" alt="nature-image-for-website" width="600" height="400">
             </a>
             <div class="desc">Hubble telescope</div>
@@ -56,8 +62,8 @@
         </div>
         
         <div class="albumContainer">
-          <div class="gallery">
-            <a target="" href="pictures.html">
+          <div class="galleryA">
+            <a target="" href="">
               <img src="\app-data\library\pictures\album-header\hubble-captures-vivid-auroras-in-jupiters-atmosphere_28000029525_o~small.jpg" alt="Mountains" width="600" height="400">
             </a>
             <div class="desc">Planets</div>
@@ -65,22 +71,39 @@
         </div>
   
         <div class="albumContainer">
-          <div class="gallery">
-            <a target="" href="pictures.html">
+          <div class="galleryA">
+            <a target="" href="">
               <img src="\app-data\library\pictures\album-header\PIA04921~small.jpg" alt="Mountains" width="600" height="400">
             </a>
             <div class="desc">Newborn stars</div>
           </div>
         </div>
       </div>
+    
+      <div class="popUp" id="popUp">
+        <div class="popUp-content">
+          <label for="Title">Titel: </label>
+          <input type="text" name="Title" id="titleInput">
+          <label for="Comment">Comment: </label>
+          <textarea name="Comment" id="Comment" cols="30" rows="10"></textarea>
+          <button class="SubmitButton" onclick="setCommentAndTitle()">Edit</button>
+          <p class="hiddenValue" id="hiddenValue"></p>
+        </div>
+      </div>
+    
+      <br>
+
+      <div class="container" id="myModal">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+        <img class ="full-img" id="expandedImg">
+        <div id="imgtext"></div>
+        <div id="imgdesc"></div>
+      </div>
       
       
       <div class="clearfix"></div>
       
-      <div style="padding:6px;">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque expedita iure mollitia aperiam neque natus dolor similique earum, fugiat doloribus omnis quod corporis minima dolores reiciendis. At nam earum iste.</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque expedita iure mollitia aperiam neque natus dolor similique earum, fugiat doloribus omnis quod corporis minima dolores reiciendis. At nam earum iste.</p>
-      </div>
+      <script src="/js/generatePicturesAss.js"></script>
 
 </body>
 </html>
