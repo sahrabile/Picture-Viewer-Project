@@ -442,7 +442,11 @@ function prepareSlideshow(){
     for(let edit of editButtons){
       edit.style.display = "block";
     }
-    generateSlideshowContainer(slideShowPictures);
+    if(slideShowPictures.length > 0){
+      generateSlideshowContainer(slideShowPictures);
+    }else{
+      alert("Choose some pictures for your slideshow!");
+    }
     slideShowPictures = [];
   });
 }
