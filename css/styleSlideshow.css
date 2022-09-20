@@ -9,6 +9,7 @@ a{
   }
   body{
     background-color: #FEF5ED;
+   
   }
 
 * {box-sizing:border-box}
@@ -35,16 +36,17 @@ a{
     height: 100%;
     overflow: hidden;
     background-color: rgba(0,0,0,0,5);
-
+    
 }
 
 .modal-content{
-background-color: #fefefe;
+background-color: black;
 margin: auto;
 border: 1px solid #888;
 width: 80%;
 height: 90%;
 overflow: hidden;
+
 }
 
 #slideImg{
@@ -55,6 +57,7 @@ overflow: hidden;
 .close{
     top: 5%;
     left: 80%;
+    right: 10%;
     position: fixed;
     float: right;
     color: #aaa;
@@ -77,20 +80,23 @@ height: 100%;
 max-width: 62.5rem;
 position: relative;
 margin: auto;
+
 }
 
 .mySlides{
     display: none;
     width: 100%;
     height: 100%;
+    
 }
 
-.prev, .next{
+.next{
+    right: 10%;
     cursor: pointer;
     position: absolute;
-    top: 45%;
+    top: 40%;
     width: auto;
-    margin-top: -1.375rem;
+    margin-top: 0.625rem;
     padding: 1rem;
     color: white;
     font-weight: bold;  
@@ -100,9 +106,19 @@ margin: auto;
     user-select: none;
 }
 
-.next{
-right: 0;
-border-radius: 0.188rem 0 0 0.188rem;
+.prev{
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    margin-top: 0.625rem;
+    padding: 1rem;
+    color: white;
+    font-weight: bold;  
+    font-size: 1.125rem;
+    transition: 0,6s ease;
+    border-radius: 0 0.188rem 0.188rem 0;
+    user-select: none;
 }
 
 .prev:hover, .next:hover{
