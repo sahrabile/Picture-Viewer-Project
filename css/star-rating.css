@@ -5,7 +5,7 @@
 }
 
 .rating{
-    margin: 1rem;
+    margin: .8rem auto;
     position: relative;
     width: fit-content;
     display: flex;
@@ -13,7 +13,7 @@
     border: 1px solid rgb(231, 231, 231);
     border-radius: 5%;
     padding: 0.2rem;
-    margin: auto;
+    
    
 }
 
@@ -75,6 +75,7 @@ button:hover{
 @media only screen and (max-width: 59.375rem) {
     .rating{
         height: fit-content;
+        margin: .5rem auto;
     }
    .rating label{
         width: 1rem;
@@ -97,6 +98,7 @@ button:hover{
 
     .rating{
         height: fit-content;
+        margin: .5rem auto;
     }
    .rating label{
         width: 1.5rem;

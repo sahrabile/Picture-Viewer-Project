@@ -444,8 +444,6 @@ function prepareSlideshow(){
     }
     if(slideShowPictures.length > 0){
       generateSlideshowContainer(slideShowPictures);
-    }else{
-      alert("Choose some pictures for your slideshow!");
     }
     slideShowPictures = [];
   });
@@ -512,11 +510,9 @@ async function generateSlideshowContainer(pictureArray){
               closeButton.addEventListener("click",(event)=> {
                 myModal.style.display = "none";
                 let children = slideContainer.childNodes;
-                for(let child of children){
-                  if(child.className === "mySlides"){
-                    child.remove();
-                  }
-                }
+                slideContainer.replaceChildren();
+                
+               
                 //remove slides from slide container
 
               });
